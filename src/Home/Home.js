@@ -1,8 +1,14 @@
+import SearchBar from '../SearchBar/SearchBar';
 import CockTailItem from './CockTailItem/CockTailItem';
 import { dummy_data } from './DUMMY_DATA';
+import { useState } from 'react';
 
 const Home = () => {
-	let filteredList = dummy_data.map((a) => (
+	const [searchElement, updateSearchElement] = useState("");
+
+	let filteredList = dummy_data.filter((item) =>
+    item.name.toLowerCase().includes(searchElement.toLowerCase())
+  ).map((a) => (
 		<CockTailItem
 		  id={a.id}
 		  name={a.name}
@@ -12,7 +18,10 @@ const Home = () => {
 		/>
 	  ));
 	return (
+		<>
+		<SearchBar  updateSearch={updateSearchElement} />
 		{filteredList}
+		</>
 	)
 };
 
