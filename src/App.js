@@ -4,8 +4,10 @@ import { dummy_data } from './DUMMY_DATA';
 import About from "./About/About";
 import NavBar from './NavBar/NavBar'
 import { Route, Switch } from "react-router-dom";
+import Details from './Details/CocktailDetails.js';
 
 function App() {
+
 
   let filteredList = dummy_data.map((a) => (
     <CockTailItem
@@ -17,6 +19,7 @@ function App() {
     />
   ));
 
+
   return (
     <>
       <NavBar />
@@ -24,6 +27,9 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
+        <Route path="/cocktail/:id">
+            <Details />
+          </Route>
         <Route path="/">
           {filteredList}
         </Route>

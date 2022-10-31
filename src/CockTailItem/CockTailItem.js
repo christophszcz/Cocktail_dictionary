@@ -1,6 +1,16 @@
 import React from "react";
 import styles from "./CockTailItem.css";
-const CockTailItem = (props) => (
+import { dummy_data } from "../DUMMY_DATA.js";
+import { Link } from "react-router-dom";
+const CockTailItem = (props) => {
+  
+  const getDetails = (id) => {
+    const details = dummy_data.find((item) => item.id === id);
+    props.saveDetails(details);
+  };
+
+  return (
+  
   <div className={styles.CockTailItem}>
     <div>
       <img
@@ -12,16 +22,12 @@ const CockTailItem = (props) => (
         <h3>{props.name}</h3>
         <h4>{props.info}</h4>
         <p>{props.glass}</p>
-        <a
-          className={`${styles.btn} ${styles.btnPrimary}`}
-          href="/details"
-          onClick={() => props.updateIdSelected(props.id)}
-        >
+        <Link to={"/cocktail/" + props.id}>
           Details
-        </a>
+        </Link>
       </div>
     </div>
   </div>
-);
+)};
 
 export default CockTailItem;
