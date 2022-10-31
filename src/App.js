@@ -1,7 +1,9 @@
 import './App.css';
 import CockTailItem from './CockTailItem/CockTailItem';
 import { dummy_data } from './DUMMY_DATA';
-import NavBar from './NavBar/NavBar.js';
+import About from "./About/About";
+import NavBar from './NavBar/NavBar'
+import { Route, Switch } from "react-router-dom";
 
 function App() {
 
@@ -16,10 +18,17 @@ function App() {
   ));
 
   return (
-    <div className="App">
-      <NavBar/>
-      {filteredList}
-    </div>
+    <>
+      <NavBar />
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/">
+          {filteredList}
+        </Route>
+      </Switch>
+    </>
   );
 }
 
