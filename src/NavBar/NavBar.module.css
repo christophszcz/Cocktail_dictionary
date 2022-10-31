@@ -1,4 +1,10 @@
 .NavBar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  height: 5rem;
+  border-bottom: 2px solid #0e0d7c;
+  box-shadow: 2px 5px 3px 0 rgb(0 0 0 / 50%);
 }
 
 .NavCenter {
@@ -17,4 +23,20 @@ ul {
 
 li {
   display: list-item;
+}
+
+.linkStyle {
+  display: flex;
+  align-items: center;
+}
+
+.linkStyle a {
+  text-transform: capitalize;
+  display: inline-block;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
 }
