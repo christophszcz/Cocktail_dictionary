@@ -1,6 +1,6 @@
 import SearchBar from '../SearchBar/SearchBar';
-import CockTailItem from './CockTailItem/CockTailItem';
-import { dummy_data } from './DUMMY_DATA';
+import CockTailItem from '../CockTailItem/CockTailItem';
+import { dummy_data } from '../DUMMY_DATA';
 import { useState } from 'react';
 
 const Home = () => {
